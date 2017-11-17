@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!<br>
+
+  </h1>
+</div>
+{{obj.name}}<br>
+{{obj.id}}<br>
+<ul>
+  <li *ngFor="let i of arr">{{i}}</li>
+</ul>
+<a routerLink="member">Member</a>
+<a routerLink="product">Product</a>
+<br>
+<p *ngIf="isTrue">Hello</p>
+<p *ngIf="myName == 'Anita'">True</p>
+<p *ngIf="myName == 'Anita' && false">True</p>
+<p *ngIf="myName == 'Anita' || true">True</p>
+
+<p *ngIf="isTrue; else firstTemp">Hello</p>
+<ng-template #firstTemp>This is my first template</ng-template>
+
+<p *ngIf="isTrue; then secondTemp else thirdTemp">Hello</p>
+<ng-template #secondTemp>This is my second template</ng-template>
+<ng-template #thirdTemp>This is my thrid template</ng-template>
+<!--<app-products></app-products>
+<app-members></app-members>-->
+
+<router-outlet ></router-outlet>
